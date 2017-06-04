@@ -1,0 +1,11 @@
+.app-body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.feature-card {
+  width: 100%;
+  margin: 16px ;
+}
+.mat-sidenav-content{
+  min-height: 400px;
+}

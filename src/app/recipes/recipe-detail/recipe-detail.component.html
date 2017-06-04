@@ -1,0 +1,28 @@
+<md-card class="recipe-detail-card">
+  <md-card-header>
+    <img md-card-avatar class="header-image" [src]="recipe.imagePath">
+    <md-card-title>{{ recipe.name}}</md-card-title>
+    <md-card-subtitle> subtitle </md-card-subtitle>
+  </md-card-header>
+  <img md-card-image [src]="recipe.imagePath">
+  <md-card-content>
+    <md-card-title> Description </md-card-title>
+    <p>
+      {{recipe.description}}
+    </p>
+    <md-card-title> Ingredients </md-card-title>
+    <md-list>
+      <md-list-item *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name  }} <span class="auto-spacer"></span>
+        <md-chip-list>
+          <md-chip>{{ingredient.amount}}</md-chip>
+        </md-chip-list>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="onAddIngredient()">Add ingredients to shopping list</button>
+    <button md-button>EDIT</button>
+    <button md-button>DELETE</button>
+  </md-card-actions>
+</md-card>

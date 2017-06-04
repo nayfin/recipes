@@ -1,0 +1,24 @@
+<md-sidenav-container class="shopping-container">
+  <md-sidenav #sidenav mode="side" opened="true" class="shopping-list-sidenav mat-elevation-z4">
+    <md-nav-list>
+
+      <md-list-item *ngFor="let ingredient of ingredients" (click)="onSelectIngredient(ingredient)">
+        <md-chip-list>
+          <md-chip> {{ ingredient.amount}} </md-chip>
+        </md-chip-list>
+        {{ ingredient.name }}
+        <span class="auto-spacer"></span>
+        <button md-icon-button>
+          <md-icon>edit</md-icon>
+        </button>
+      </md-list-item>
+
+    </md-nav-list>
+  </md-sidenav>
+  <button md-mini-fab class="shopping-list-display-fab" (click)="sidenav.toggle()">
+    <md-icon>list</md-icon>
+  </button>
+  <div class="shopping-edit">
+    <app-shopping-edit></app-shopping-edit>
+  </div>
+</md-sidenav-container>

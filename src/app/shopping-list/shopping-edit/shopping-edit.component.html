@@ -1,0 +1,11 @@
+<form>
+  <md-input-container class="">
+    <input mdInput placeholder="Ingredient" #name>
+  </md-input-container>
+  <md-input-container class="">
+    <input mdInput type="number" placeholder="Amount" #amount>
+  </md-input-container>
+</form>
+<button md-raised-button (click)="onAddIngredient()">Add</button>
+<button md-raised-button>Delete</button>
+<button md-raised-button>Clear</button>

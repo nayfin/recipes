@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  font-family: Roboto,Helvetica Neue Light;
+  margin: 0;
+}
+/*
+Pulls up all mat-mini-fab to z-index: 20
+TODO: make this the standard for all fabs
+*/
+.mat-mini-fab {
+    z-index: 20;
+}
+/*
+ TODO remove after routing components
+*/
+.mat-sidenav.mat-sidenav-side {
+    min-width: 250px;
+}
+.mat-sidenav-content {
+  min-height: 40px;
+}
+.auto-spacer {
+  flex: 1 1 auto;
+}

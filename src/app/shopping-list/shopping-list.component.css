@@ -1,0 +1,13 @@
+md-chip-list {
+  padding-right: 8px;
+}
+.shopping-edit {
+    padding: 25px;
+    min-height: 500px;
+}
+
+.shopping-list-display-fab {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}

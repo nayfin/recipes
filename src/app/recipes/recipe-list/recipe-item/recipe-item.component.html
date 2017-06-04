@@ -1,0 +1,7 @@
+<md-list-item (click)="onRecipeSelected()">
+  <img md-list-avatar [src]="recipe.imagePath" [alt]="recipe.name">
+   <p md-line>{{ recipe.name }}</p>
+   <button md-icon-button>
+      <md-icon>info</md-icon>
+   </button>
+</md-list-item>
