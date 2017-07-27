@@ -1,4 +1,5 @@
-<md-list-item (click)="onRecipeSelected()">
+<md-list-item [routerLink]="[id]"
+              routerLinkActive="active">
   <img md-list-avatar [src]="recipe.imagePath" [alt]="recipe.name">
    <p md-line>{{ recipe.name }}</p>
    <button md-icon-button>

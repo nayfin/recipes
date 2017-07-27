@@ -39,7 +39,9 @@ export class RecipesService {
     console.log("getRecipes",this.recipes);
     return this.recipes.slice();
   }
-
+  getRecipeById(id: number){
+    return this.recipes[id];
+  }
   addRecipe(recipe: Recipe){
     console.log("addRecipe",recipe);
     this.recipes.push(recipe);
