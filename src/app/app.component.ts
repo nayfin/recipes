@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent implements OnInit {
   title = 'Recipe App';
-
+  testValue = 'Hello Goodnight';
   currentPage: string = "./shopping-list"
 
   onLinkclicked(data){
@@ -17,5 +17,9 @@ export class AppComponent implements OnInit {
   }
   ngOnInit(){
     console.log(this.currentPage);
+  }
+
+  onTested(value: string){
+    console.log(value);
   }
 }
