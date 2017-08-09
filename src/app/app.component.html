@@ -1,9 +1,15 @@
-<app-header (linkClicked)="onLinkclicked($event)"></app-header>
 
-<div class="app-body" >
-  <router-outlet></router-outlet>
+<div class="app-container"
+     fxLayout="column"
+     fxLayoutAlign="stretch"> 
+  <app-header fxLayout="row" (linkClicked)="onLinkclicked($event)"></app-header>
+
+  <div class="app-body"
+       fxFlex >
+    <router-outlet></router-outlet>
+  </div>
+
+  <button md-fab (click)="onTested(testValue)">
+      <md-icon class="md-18|md-24|md-36|md-48">flight_takeoff</md-icon>
+  </button>
 </div>
-
-<button md-fab (click)="onTested(testValue)">
-    <md-icon class="md-18|md-24|md-36|md-48">ligature</md-icon>
-</button>

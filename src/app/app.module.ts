@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // TODO: Move all MdModules to own barrel module
 import { MdToolbarModule,
@@ -63,6 +64,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     // TODO: Move all MdModules to own barrel module
     MdToolbarModule,

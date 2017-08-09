@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body, html, .app-container, app-root{
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
   font-family: Roboto,Helvetica Neue Light;
   margin: 0;
+  height: 100%;
 }
 /*
 Pulls up all mat-mini-fab to z-index: 20

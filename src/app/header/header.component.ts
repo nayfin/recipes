@@ -6,24 +6,21 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 
-//@Input
 export class HeaderComponent implements OnInit {
-  @Output() linkClicked = new EventEmitter<string>();
-  //TODO: make this an input
-  title: string = "Recipe App";
+  // TODO: make this an input
+  title = 'Recipe App';
   // TODO: Import appRoutes after seperated into module, or create links service to provide to routes and header
-  links: {}[] = [
-    {title: "Recipes", route: "recipes"},
-    {title: "Shopping List", route: "shopping-list"},
+  links: Link[] = [
+    {title: 'Recipes', route: 'recipes'},
+    {title: 'Shopping List', route: 'shopping-list'},
   ];
   constructor() { }
 
   ngOnInit() {
   }
-
-  // onLinkClick(suffix){
-  //   this.linkClicked.emit(suffix)
-  //   console.log(suffix)
-  // }
-
+}
+// TODO find a way to connect this to routes
+export class Link {
+  constructor( public title: string,
+               public route: string ) { }
 }
