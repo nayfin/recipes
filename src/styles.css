@@ -7,6 +7,11 @@ body, html, .app-container, app-root{
   margin: 0;
   height: 100%;
 }
+.app-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
 /*
 Pulls up all mat-mini-fab to z-index: 20
 TODO: make this the standard for all fabs

@@ -6,6 +6,7 @@ import { RecipesService } from './recipes.service';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
+  host: {class: 'app-body'},
 })
 export class RecipesComponent implements OnInit {
 
