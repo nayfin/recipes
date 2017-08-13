@@ -1,10 +1,10 @@
-<md-sidenav-container class="recipes-container" fxFlex="row" fxFlexFill>
+<md-sidenav-container class="recipes-container" fxFlexFill>
   <md-sidenav #sidenav mode="side" opened="true" class="recipe-list-sidenav mat-elevation-z4" >
     <div >
       <app-recipe-list></app-recipe-list>
     </div>
   </md-sidenav>
-  <div class="body-content" fxFlex> 
+  <div class="router-container" fxFlex> 
     <router-outlet></router-outlet>
   </div>
 </md-sidenav-container>
