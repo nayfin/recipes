@@ -1,17 +1,29 @@
+.body-content {
+  overflow: auto;
+}
+
+html, body {
+      height:100%;
+      min-height:100vh;
+      margin:0;
+}
 /* You can add global styles to this file, and also import other style files */
-body, html, .app-container, app-root{
+/* body, html, .app-container, app-root{
   display: flex;
   flex: 1 0 100%;
   flex-direction: column;
   font-family: Roboto,Helvetica Neue Light;
   margin: 0;
-  height: 100%;
-}
-.app-body {
+  // height: 100%;
+} */
+  /* .app-body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-}
+} 
+/* app-component{
+  display: flex;
+}  */
 /*
 Pulls up all mat-mini-fab to z-index: 20
 TODO: make this the standard for all fabs
