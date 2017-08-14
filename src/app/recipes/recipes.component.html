@@ -1,5 +1,14 @@
 <md-sidenav-container class="recipes-container" fxFlexFill>
   <md-sidenav #sidenav mode="side" opened="true" class="recipe-list-sidenav mat-elevation-z4" >
+    <md-toolbar>
+      <div fxFill fxLayoutAlign="space-between center">
+        <span>Recipes</span>
+        <button md-mini-fab
+                (click)="onAddRecipe()">
+          <md-icon class="md-18|md-24|md-36|md-48">add</md-icon>
+        </button>
+      </div>  
+    </md-toolbar>
     <div >
       <app-recipe-list></app-recipe-list>
     </div>

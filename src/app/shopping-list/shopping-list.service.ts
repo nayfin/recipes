@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-
+import { Subject } from 'rxjs/Subject';
 import { Ingredient } from '../shared/ingredient.model';
 import { RecipesService } from '../recipes/recipes.service';
 
@@ -7,6 +7,32 @@ import { RecipesService } from '../recipes/recipes.service';
 export class ShoppingListService {
 
   private ingredients: Ingredient[] = [
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
+    new Ingredient("Carrots", 4),
+    new Ingredient("Tomatoes", 7),
     new Ingredient("Carrots", 4),
     new Ingredient("Tomatoes", 7),
   ];
@@ -17,7 +43,6 @@ export class ShoppingListService {
 
     this.recipesService.recipeIngredientsEmitted.subscribe((ingredients) => {
       this.ingredients.push(...ingredients);
-    //  this.ingredientsChanged.emit(this.ingredients.slice());
     });
 
   }
@@ -28,7 +53,7 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient){
     this.ingredients.push(ingredient);
-  //  this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
 }

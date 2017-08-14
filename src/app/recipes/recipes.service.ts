@@ -29,21 +29,19 @@ export class RecipesService {
               ]),
   ];
 
-  recipeSelected = new EventEmitter<Recipe>();
-
   recipeIngredientsEmitted = new EventEmitter<Ingredient[]>();
 
   constructor() { }
 
-  getRecipes(){
-    console.log("getRecipes",this.recipes);
+  getRecipes() {
+    console.log('getRecipes', this.recipes);
     return this.recipes.slice();
   }
-  getRecipeById(id: number){
+  getRecipeById(id: number) {
     return this.recipes[id];
   }
-  addRecipe(recipe: Recipe){
-    console.log("addRecipe",recipe);
+  addRecipe(recipe: Recipe) {
+    console.log('addRecipe', recipe);
     this.recipes.push(recipe);
   }
 

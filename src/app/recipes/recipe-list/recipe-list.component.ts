@@ -17,7 +17,5 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
     // Sets recipes array to array from service
     this.recipes = this.recipesService.getRecipes();
-    // Emits a selected recipe so that the RecipeDetailComponent doesn't load empty
-    this.recipesService.recipeSelected.emit(this.recipes[0]);
   }
 }

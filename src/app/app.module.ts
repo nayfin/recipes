@@ -47,6 +47,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AppRoutingModule } from './app-routing.module';
     ShoppingListComponent,
     ShoppingEditComponent,
     RecipesHomeComponent,
+    RecipeEditComponent,
   ],
   imports: [
     BrowserModule,
