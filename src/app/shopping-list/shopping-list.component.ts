@@ -30,7 +30,10 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   onAddIngredientToList() {
     console.log('Build the damn thing!');
   }
-
+  onRemoveIngredient(ingredient: Ingredient, event) {
+    event.stopPropagation();
+    console.log(`Remove the ${ingredient.name}`);
+  }
   onSelectIngredient(ingredient: Ingredient){
     console.log(ingredient);
   }
