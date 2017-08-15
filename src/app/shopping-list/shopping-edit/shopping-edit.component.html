@@ -1,11 +1,38 @@
-<form>
-  <md-input-container class="">
-    <input mdInput placeholder="Ingredient" #name>
-  </md-input-container>
-  <md-input-container class="">
-    <input mdInput type="number" placeholder="Amount" #amount>
-  </md-input-container>
-</form>
-<button md-raised-button (click)="onAddIngredient()">Add</button>
-<button md-raised-button>Delete</button>
-<button md-raised-button>Clear</button>
+<md-card>
+  <md-card-header>
+    <p>Value: {{ ingredientForm.value | json }}</p>
+    <p>Validation status: {{ ingredientForm.status }}</p>
+  </md-card-header>
+  <md-card-content>
+
+  </md-card-content>
+    <form [formGroup]="ingredientForm" (ngSubmit)="onAddIngredient(ingredientForm.value)">
+      <md-input-container class="">
+        <input mdInput
+               formControlName="name" 
+               placeholder="Ingredient"
+               type="input">
+      </md-input-container>
+      <md-input-container class="">
+        <input mdInput
+               formControlName="amount"  
+               type="number"
+               min="0" 
+               placeholder="Amount">
+      </md-input-container>
+      <button md-raised-button 
+              (click)="onAddIngredient()"
+              [disabled]="!ingredientForm.valid">Add
+      </button>
+      <button md-raised-button 
+              type="button"
+              (click)="onClearIngredient()">Clear
+      </button>
+    </form>
+  <md-card-footer>
+  </md-card-footer>
+</md-card>
+
+    
+
+

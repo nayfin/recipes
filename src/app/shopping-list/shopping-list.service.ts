@@ -10,23 +10,6 @@ export class ShoppingListService {
     new Ingredient("Carrots", 4),
     new Ingredient("Tomatoes", 7),
     new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
-    new Ingredient("Carrots", 4),
-    new Ingredient("Tomatoes", 7),
     new Ingredient("Carrots", 4),
     new Ingredient("Tomatoes", 7),
     new Ingredient("Carrots", 4),
@@ -37,8 +20,8 @@ export class ShoppingListService {
     new Ingredient("Tomatoes", 7),
   ];
 
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
-
+  ingredientsChanged = new Subject<Ingredient[]>();
+  startedEditing = new Subject<number>();
   constructor( private recipesService: RecipesService ) {
 
     this.recipesService.recipeIngredientsEmitted.subscribe((ingredients) => {
