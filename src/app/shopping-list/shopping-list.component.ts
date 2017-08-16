@@ -26,12 +26,15 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
   onNewIngredient() {
     console.log('Display empty form');
   }
-  onRemoveIngredient(ingredient: Ingredient) {
-    console.log(`Remove the ${ingredient.name}`);
+
+  onRemoveIngredient(index: number) {
+    this.shoppingListService.removeIngredient(index);
   }
+
   onEditIngredient(index: number) {
     this.shoppingListService.startedEditing.next(index);
     console.log(index);

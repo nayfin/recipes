@@ -6,7 +6,7 @@
   <md-card-content>
 
   </md-card-content>
-    <form [formGroup]="ingredientForm" (ngSubmit)="onAddIngredient(ingredientForm.value)">
+    <form [formGroup]="ingredientForm" (ngSubmit)="onSubmitIngredient()">
       <md-input-container class="">
         <input mdInput
                formControlName="name" 
@@ -21,8 +21,8 @@
                placeholder="Amount">
       </md-input-container>
       <button md-raised-button 
-              (click)="onAddIngredient()"
-              [disabled]="!ingredientForm.valid">Add
+              (click)="onSubmitIngredient()"
+              [disabled]="!ingredientForm.valid">{{ editMode ? "Update" : "Save"}}
       </button>
       <button md-raised-button 
               type="button"
