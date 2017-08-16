@@ -1,8 +1,27 @@
 <md-card class="recipe-form-card">
   <md-card-header>
     Edit Recipe
+    <p>Value: {{ recipeForm.value | json }}</p>
+    <p>Validation status: {{ recipeForm.status }}</p>
   </md-card-header>
   <md-card-content>
-    
+    <form formGroup="recipeForm" (ngSubmit)="onSubmitRecipe()">
+      <md-input-container>
+        <input mdInput
+               formControlName="name" 
+               placeholder="Recipe">
+      </md-input-container>
+      <md-input-container>
+        <textarea mdInput
+               formControlName="description" 
+               placeholder="Description">
+        </textarea>
+      </md-input-container>
+              <md-input-container>
+        <input mdInput
+               formControlName="imageUrl" 
+               placeholder="Image URL">
+      </md-input-container>
+    </form>
   </md-card-content>
 </md-card>

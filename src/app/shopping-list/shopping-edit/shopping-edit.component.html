@@ -7,13 +7,12 @@
 
   </md-card-content>
     <form [formGroup]="ingredientForm" (ngSubmit)="onSubmitIngredient()">
-      <md-input-container class="">
+      <md-input-container>
         <input mdInput
                formControlName="name" 
-               placeholder="Ingredient"
-               type="input">
+               placeholder="Ingredient">
       </md-input-container>
-      <md-input-container class="">
+      <md-input-container>
         <input mdInput
                formControlName="amount"  
                type="number"
