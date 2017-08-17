@@ -22,7 +22,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   constructor(private shoppingListService: ShoppingListService,
               @Inject(FormBuilder) fb: FormBuilder) {
     this.ingredientForm = fb.group({
-      name: [null, Validators.minLength(2)],
+      name: [null, [Validators.minLength(2)]],
       amount: [null, [Validators.required, Validators.min(0)]]
     });
   }
