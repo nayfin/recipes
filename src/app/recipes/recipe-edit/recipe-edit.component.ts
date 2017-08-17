@@ -51,7 +51,6 @@ export class RecipeEditComponent implements OnInit {
         amount: this.fb.control(null)
       })
     );
-    // console.log("add new ingredient");
   }
 
   onRemoveIngredient(index: number) {
@@ -79,7 +78,6 @@ export class RecipeEditComponent implements OnInit {
       imageUrl: [recipeImageUrl, [Validators.required]],
       ingredients: recipeIngredients
     });
-    console.log(this.recipeForm.get('ingredients').value );
   }
 
 }
