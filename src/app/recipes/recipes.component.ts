@@ -18,6 +18,5 @@ export class RecipesComponent implements OnInit {
   }
   onAddRecipe() {
     this.router.navigate(['new'], {relativeTo: this.route });
-    console.log('Create add recipe logic');
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import {FormBuilder, FormGroup, FormArray, FormControl, Validators} from '@angular/forms';
 
 import { RecipesService } from '../recipes.service';
@@ -18,6 +18,7 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
+              private router: Router,
               private recipesService: RecipesService) {
 
   }
@@ -39,16 +40,21 @@ export class RecipeEditComponent implements OnInit {
   }
 
   onSaveRecipe() {
+    const recipe: Recipe = this.recipeForm.value;
     if (this.editMode) {
-      console.log(this.recipeForm);
+      this.recipesService.updateRecipe(this.id, recipe);
+      this.onDone();
+    } else {
+      const newRecipeId = this.recipesService.addRecipe(recipe);
+      this.router.navigate(['../', newRecipeId], {relativeTo: this.route} );
     }
   }
 
   onAddIngredient() {
     (<FormArray>this.recipeForm.get('ingredients')).push(
       this.fb.group({
-        name: this.fb.control(null),
-        amount: this.fb.control(null)
+        name: [null, [Validators.required]],
+        amount: [null, [Validators.required]]
       })
     );
   }
@@ -57,6 +63,10 @@ export class RecipeEditComponent implements OnInit {
     // this.recipeForm.get('ingredients').value.splice(index, 1);
     console.log(index);
   }
+  onDone() {
+    this.recipeForm.reset();
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
   private initForm(recipe) {
 
     const recipeName = this.editMode ? recipe.name : '',
@@ -64,14 +74,16 @@ export class RecipeEditComponent implements OnInit {
           recipeImageUrl = this.editMode ? recipe.imageUrl : '',
           recipeIngredients = this.fb.array([]);
 
-    recipe.ingredients.forEach((ingredient, i, arr) => {
-      recipeIngredients.push(
-        this.fb.group({
-          name: this.fb.control( ingredient.name),
-          amount: this.fb.control( ingredient.amount)
-        })
-      );
-    });
+    if (this.editMode) {
+      recipe.ingredients.forEach((ingredient, i, arr) => {
+        recipeIngredients.push(
+          this.fb.group({
+            name:  [ingredient.name, [Validators.required]],
+            amount: [ingredient.amount, [Validators.required]]
+          })
+        );
+      });
+    }
     this.recipeForm = this.fb.group({
       name: [recipeName, [Validators.required]],
       description: [recipeDescription, [Validators.required]],

@@ -4,6 +4,7 @@
     <p>Value: {{ recipeForm.value | json }}</p>
     <p>Validation status: {{ recipeForm.status }}</p>
   </md-card-header>
+  <img md-card-image [src]="imageUrl.value">
   <md-card-content>
     <form [formGroup]="recipeForm" (ngSubmit)="onSaveRecipe()">
       <md-input-container>
@@ -14,7 +15,8 @@
       <md-input-container>
         <input mdInput
                formControlName="imageUrl" 
-               placeholder="Image URL">
+               placeholder="Image URL"
+               #imageUrl>
       </md-input-container>
       <md-input-container>
         <textarea mdInput
@@ -33,23 +35,33 @@
           <md-input-container>
             <input mdInput
                    formControlName="amount"
-                   type="number" 
+                   type="number"
+                   min="0" 
                    placeholder="Amount">
           </md-input-container>
-          <button md-mini-fab (click)="onRemoveIngredient(i)">
+          <button md-mini-fab 
+                  type="button"
+                  (click)="onRemoveIngredient(i)">
               <md-icon>delete</md-icon>
           </button>
         </md-list-item>
         <md-list-item>
-          <button md-raised-button 
+          <button md-raised-button
+                  type="button" 
                   (click)="onAddIngredient()">
             <md-icon>add</md-icon>        
             Add Ingredient                
           </button>
           <button md-raised-button 
                   type="button"
+                  [disabled]="recipeForm.invalid"
                   (click)="onSaveRecipe()">
             <md-icon>save</md-icon> Save
+          </button>
+          <button md-raised-button 
+                  type="button"
+                  (click)="onDone()">
+            <md-icon>cancel</md-icon> Cancel
           </button>
         </md-list-item> 
       </md-list>
