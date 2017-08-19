@@ -52,13 +52,15 @@ export class RecipeEditComponent implements OnInit {
 
   onAddIngredient() {
     (<FormArray>this.recipeForm.get('ingredients')).push(
-      this.fb.group({
-        name: [null, [Validators.required]],
-        amount: [null, [Validators.required]]
-      })
+      this.buildIngredient(null, null)
     );
   }
-
+  buildIngredient(name: string, amount: number) {
+    return this.fb.group({
+        name: [name, [Validators.required]],
+        amount: [amount, [Validators.required]]
+      });
+  }
   onRemoveIngredient(index: number) {
     // this.recipeForm.get('ingredients').value.splice(index, 1);
     console.log(index);
@@ -77,10 +79,7 @@ export class RecipeEditComponent implements OnInit {
     if (this.editMode) {
       recipe.ingredients.forEach((ingredient, i, arr) => {
         recipeIngredients.push(
-          this.fb.group({
-            name:  [ingredient.name, [Validators.required]],
-            amount: [ingredient.amount, [Validators.required]]
-          })
+          this.buildIngredient(ingredient.name, ingredient.amount)
         );
       });
     }
