@@ -18,13 +18,16 @@
         <md-chip-list>
           <md-chip>{{ingredient.amount}}</md-chip>
         </md-chip-list>
+        <button md-icon-button>
+          <md-icon>add</md-icon>
+
+        </button>
+      
       </md-list-item>
     </md-list>
   </md-card-content>
-  <md-card-actions>
-    <button md-button (click)="onAddIngredient()">Add ingredients to shopping list</button>
-    <button md-button>EDIT</button>
-    <button md-button>DELETE</button>
+  <md-card-actions fxLayoutAlign="end">
+    <button md-raised-button (click)="onAddIngredient()">ADD TO LIST</button>
   </md-card-actions>
 </md-card>
 </div>
