@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
     {title: 'Recipes', route: 'recipes'},
     {title: 'Shopping List', route: 'shopping-list'},
     {title: 'Signup', route: 'signup'},
+    {title: 'Signin', route: 'signin'},
   ];
   constructor() { }
 
