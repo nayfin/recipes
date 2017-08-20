@@ -1,0 +1,30 @@
+<div class="page-container" fxLayoutAlign="space-around stretch">
+  <md-card>
+      <md-card-header>
+          <md-card-title>Sign up</md-card-title>
+          <md-card-subtitle>Enter your information below</md-card-subtitle>
+      </md-card-header>
+      <md-card-content>
+        <form [formGroup]="registrationForm" (ngSubmit)="onSignup()">
+          <md-input-container>
+            <input mdInput
+                  formControlName="email"
+                  placeholder="Email"
+                  type="email">
+          </md-input-container>
+          <md-input-container>
+            <input mdInput
+                  formControlName="password"
+                  placeholder="Password"
+                  type="password">
+          </md-input-container>
+        </form>
+      </md-card-content>
+      <md-card-actions align="end">
+          <button md-button (click)="onSignup()">Submit</button>
+      </md-card-actions>
+      <md-card-footer>
+          
+      </md-card-footer>
+  </md-card>
+</div>

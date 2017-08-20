@@ -8,9 +8,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import 'hammerjs';
 // Barrels
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './modules/material.module';
 // App Components
 import { AppComponent } from './app.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
@@ -40,6 +42,8 @@ import { AppRoutingModule } from './app-routing.module';
     ShoppingEditComponent,
     RecipesHomeComponent,
     RecipeEditComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

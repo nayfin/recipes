@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 import { HeaderComponent } from './header/header.component';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,19 +9,11 @@ import { HeaderComponent } from './header/header.component';
 })
 export class AppComponent implements OnInit {
   title = 'Recipe App';
-  testValue = 'Hello Goodnight';
-  currentPage: string = "./shopping-list"
 
-  onLinkclicked(data){
-    console.log("emitted data:", data);
-    this.currentPage = data;
-
-  }
   ngOnInit(){
-    console.log(this.currentPage);
-  }
-
-  onTested(value: string){
-    console.log(value);
+    firebase.initializeApp({
+      apiKey: 'AIzaSyCyIYB831VTkLB6tzn84Z70ggc_FPmlA8E',
+      authDomain: 'bh-fresh-recipes.firebaseapp.com'
+    });
   }
 }

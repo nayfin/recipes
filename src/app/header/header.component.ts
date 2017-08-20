@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   links: Link[] = [
     {title: 'Recipes', route: 'recipes'},
     {title: 'Shopping List', route: 'shopping-list'},
+    {title: 'Signup', route: 'signup'},
   ];
   constructor() { }
 
