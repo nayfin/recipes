@@ -23,6 +23,8 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 // Services
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
+// API Services
+import { RecipesApiService } from './shared/api-services/recipes.api.service';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 
@@ -53,6 +55,7 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     ShoppingListService,
     RecipesService,
+    RecipesApiService,
   ],
   bootstrap: [AppComponent]
 })

@@ -24,7 +24,6 @@ export class RecipeEditComponent implements OnInit {
   }
 
   ngOnInit() {
-
     // Get the recipe id from route parameters and decide if we are in edit mode
     this.route.params
       .subscribe(

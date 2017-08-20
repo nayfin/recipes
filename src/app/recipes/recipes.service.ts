@@ -1,11 +1,15 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Http } from '@angular/http';
+
 import { Subject } from 'rxjs/Subject';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 
 @Injectable()
 export class RecipesService {
-
+  // API variables
+  // TODO: Extract all this into it's own service
+  private apiBaseUrl = 'https://bh-fresh-recipes.firebaseio.com';
   public recipes: Recipe[] = [
     new Recipe('Roast Cauliflower',
                'You roast cauliflower',
@@ -31,8 +35,12 @@ export class RecipesService {
   recipesChanged = new Subject<Recipe[]>();
   recipeIngredientsEmitted = new EventEmitter<Ingredient[]>();
 
-  constructor() { }
-
+  constructor(private http: Http) { }
+  storeAllRecipes() {
+    this.http.put(`${this.apiBaseUrl}/fresh-recipes.json`, this.recipes).subscribe((response) => {
+      console.log(response.json());
+    });
+  }
   getRecipes() {
     return this.recipes.slice();
   }
