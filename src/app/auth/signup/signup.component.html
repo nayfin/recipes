@@ -17,11 +17,15 @@
                   formControlName="password"
                   placeholder="Password"
                   type="password">
+            <md-error>Password must be at least six characters long</md-error>
           </md-input-container>
         </form>
       </md-card-content>
       <md-card-actions align="end">
-          <button md-button (click)="onSignup()">Submit</button>
+          <button md-raised-button
+                  [disabled]="registrationForm.invalid" 
+                  (click)="onSignup()">Submit
+          </button>
       </md-card-actions>
       <md-card-footer>
           

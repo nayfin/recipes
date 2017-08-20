@@ -26,6 +26,7 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
 // API Services
+import { AuthService } from './auth/auth.service';
 import { RecipesApiService } from './shared/api-services/recipes.api.service';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +58,7 @@ import { AppRoutingModule } from './app-routing.module';
     MaterialModule
   ],
   providers: [
+    AuthService,
     ShoppingListService,
     RecipesService,
     RecipesApiService,
