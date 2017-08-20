@@ -20,8 +20,8 @@ export class RecipeListComponent implements OnInit, OnDestroy {
       (recipes: Recipe[]) => {
         this.recipes = recipes;
       }
-    )
-    this.recipes = this.recipesService.getRecipes();
+    );
+    const recipes = this.recipesService.getRecipes();
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

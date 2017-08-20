@@ -1,19 +1,19 @@
 <div >
 <md-card class="recipe-detail-card">
   <md-card-header>
-    <img md-card-avatar class="header-image" [src]="recipe.imageUrl">
-    <md-card-title>{{ recipe.name}}</md-card-title>
+    <img md-card-avatar class="header-image" [src]="recipe?.imageUrl">
+    <md-card-title>{{ recipe?.name}}</md-card-title>
     <md-card-subtitle> subtitle </md-card-subtitle>
   </md-card-header>
-  <img md-card-image [src]="recipe.imageUrl">
+  <img md-card-image [src]="recipe?.imageUrl">
   <md-card-content>
     <md-card-title> Description </md-card-title>
     <p>
-      {{recipe.description}}
+      {{recipe?.description}}
     </p>
     <md-card-title> Ingredients </md-card-title>
     <md-list>
-      <md-list-item *ngFor="let ingredient of recipe.ingredients">
+      <md-list-item *ngFor="let ingredient of recipe?.ingredients">
         {{ ingredient.name  }} <span class="auto-spacer"></span>
         <md-chip-list>
           <md-chip>{{ingredient.amount}}</md-chip>
