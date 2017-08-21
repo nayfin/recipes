@@ -16,23 +16,26 @@ export class HeaderComponent implements OnInit {
   // TODO: make this an input
   title = 'Recipe App';
 
-  loggedIn = false;
   // TODO: Import appRoutes after seperated into module, or create links service to provide to routes and header
   userLinks: Link[] = [
-    {title: 'Recipes', route: 'recipes'},
-    {title: 'Shopping List', route: 'shopping-list'},
+    {title: 'RECIPES', route: 'recipes'},
+    {title: 'SHOPPING LIST', route: 'shopping-list'},
   ];
 
   authLinks: Link[] = [
-    {title: 'Signup', route: 'signup'},
-    {title: 'Signin', route: 'signin'},
+    {title: 'SIGNUP', route: 'signup'},
+    {title: 'SIGNIN', route: 'signin'},
   ]
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }
+
+  onLogout() {
+    this.authService.logout();
+  }
 }
-// TODO find a way to connect this to routes
+// TODO: find a way to connect this to routes
 export class Link {
   constructor( public title: string,
                public route: string ) { }

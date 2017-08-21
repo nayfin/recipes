@@ -27,6 +27,7 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
 // API Services
 import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesApiService } from './shared/api-services/recipes.api.service';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +60,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   providers: [
     AuthService,
+    AuthGuard,
     ShoppingListService,
     RecipesService,
     RecipesApiService,
