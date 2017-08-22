@@ -10,13 +10,12 @@ import { MaterialModule } from './modules/material.module';
 import 'hammerjs';
 // AppModules
 import { RecipesModule } from './recipes/recipes.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 // App Components
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 // Services
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
@@ -31,8 +30,6 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
     SignupComponent,
     SigninComponent,
   ],
@@ -47,6 +44,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     MaterialModule,
     RecipesModule,
+    ShoppingListModule,
   ],
   providers: [
     AuthService,
