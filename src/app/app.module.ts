@@ -6,20 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import 'hammerjs';
-// Barrels
 import { MaterialModule } from './modules/material.module';
+import 'hammerjs';
+// AppModules
+import { RecipesModule } from './recipes/recipes.module';
 // App Components
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { HeaderComponent } from './header/header.component';
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipesHomeComponent } from './recipes/recipes-home/recipes-home.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 // Services
@@ -36,14 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    RecipesHomeComponent,
-    RecipeEditComponent,
     SignupComponent,
     SigninComponent,
   ],
@@ -56,7 +45,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     // Pull in our RoutingModule
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    RecipesModule,
   ],
   providers: [
     AuthService,

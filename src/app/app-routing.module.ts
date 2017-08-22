@@ -12,12 +12,6 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'signin', pathMatch: 'full'},
-  { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard], children: [
-      { path: '', component: RecipesHomeComponent},
-      { path: 'new', component: RecipeEditComponent},
-      { path: ':id', component: RecipeDetailComponent},
-      { path: ':id/edit', component: RecipeEditComponent}
-  ]},
   { path: 'shopping-list', component: ShoppingListComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
