@@ -1,3 +1,4 @@
+import { AuthModule } from './auth/auth.module';
 // Libraries
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -5,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import 'hammerjs';
 // AppModules
@@ -13,8 +14,6 @@ import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 // App Components
 import { AppComponent } from './app.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { SigninComponent } from './auth/signin/signin.component';
 import { HeaderComponent } from './header/header.component';
 // Services
 import { ShoppingListService } from './shopping-list/shopping-list.service';
@@ -30,8 +29,6 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    SignupComponent,
-    SigninComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     MaterialModule,
     RecipesModule,
     ShoppingListModule,
+    AuthModule,
   ],
   providers: [
     AuthService,
