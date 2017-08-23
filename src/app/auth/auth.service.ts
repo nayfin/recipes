@@ -22,7 +22,7 @@ export class AuthService {
           firebase.auth().currentUser.getToken().then(
             (token: string) => {
               this.token = token;
-              this.router.navigate(['recipes']);
+              this.router.navigate(['home']);
             }
           );
         }

@@ -24,11 +24,13 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesApiService } from './shared/api-services/recipes.api.service';
 // Routing
 import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
