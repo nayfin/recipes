@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import 'hammerjs';
 // AppModules
-import { RecipesModule } from './recipes/recipes.module';
+// import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 // App Components
 import { AppComponent } from './app.component';
@@ -42,7 +42,7 @@ import { HomeComponent } from './home/home.component';
     // Pull in our RoutingModule
     AppRoutingModule,
     MaterialModule,
-    RecipesModule,
+    // RecipesModule,
     ShoppingListModule,
     AuthModule,
   ],
