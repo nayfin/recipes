@@ -1,4 +1,3 @@
-import { AuthModule } from './auth/auth.module';
 // Libraries
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,11 +9,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import 'hammerjs';
 // AppModules
-// import { RecipesModule } from './recipes/recipes.module';
+import { CoreModule } from './core/core.module';
+import { AuthModule } from './auth/auth.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+// Routing
+import { AppRoutingModule } from './app-routing.module';
 // App Components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 // Services
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipesService } from './recipes/recipes.service';
@@ -22,15 +23,10 @@ import { RecipesService } from './recipes/recipes.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesApiService } from './shared/api-services/recipes.api.service';
-// Routing
-import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +39,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     MaterialModule,
     // RecipesModule,
+    CoreModule,
     ShoppingListModule,
     AuthModule,
   ],
