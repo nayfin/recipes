@@ -25,7 +25,7 @@
         </textarea>
       </md-input-container>
       <md-list formArrayName="ingredients" >
-        <md-list-item *ngFor="let ingredient of recipeForm.get('ingredients').controls; let i = index"
+        <md-list-item *ngFor="let ingredient of ingredients; let i = index"
                       [formGroupName]="i" >
           <md-input-container>
             <input mdInput

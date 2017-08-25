@@ -14,6 +14,7 @@ export class RecipeEditComponent implements OnInit {
 
   public id: number;
   public editMode = false;
+  ingredients; // TODO: figure out type of ingredients
   recipeForm: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -34,6 +35,8 @@ export class RecipeEditComponent implements OnInit {
           this.id = id;
           this.editMode = !isNaN(id);
           this.initForm(recipe);
+          this.ingredients = (<FormArray>this.recipeForm.get('ingredients')).controls;
+          console.log("ingrediens.controls:", this.ingredients);
         }
       );
   }

@@ -16,13 +16,6 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { AppRoutingModule } from './app-routing.module';
 // App Components
 import { AppComponent } from './app.component';
-// Services
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipesService } from './recipes/recipes.service';
-// API Services
-import { AuthService } from './auth/auth.service';
-import { AuthGuard } from './auth/auth-guard.service';
-import { RecipesApiService } from './shared/api-services/recipes.api.service';
 
 @NgModule({
   declarations: [
@@ -43,13 +36,7 @@ import { RecipesApiService } from './shared/api-services/recipes.api.service';
     ShoppingListModule,
     AuthModule,
   ],
-  providers: [
-    AuthService,
-    AuthGuard,
-    ShoppingListService,
-    RecipesService,
-    RecipesApiService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
