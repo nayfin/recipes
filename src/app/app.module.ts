@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material.module';
 import 'hammerjs';
 // AppModules
+import { DesignModule } from './modules/design.module';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
@@ -30,7 +30,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     // Pull in our RoutingModule
     AppRoutingModule,
-    MaterialModule,
+    DesignModule,
     // RecipesModule,
     CoreModule,
     ShoppingListModule,

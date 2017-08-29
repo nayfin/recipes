@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MdToolbarModule,
          MdIconModule,
          MdAutocompleteModule,
@@ -27,6 +28,7 @@ import { MdToolbarModule,
 
 @NgModule({
   imports: [    // TODO: Move all MdModules to own barrel module
+    FlexLayoutModule,
     MdToolbarModule,
     MdIconModule,
     MdAutocompleteModule,
@@ -53,6 +55,7 @@ import { MdToolbarModule,
     MdSnackBarModule,
   ],
   exports: [
+    FlexLayoutModule,
     MdToolbarModule,
     MdIconModule,
     MdAutocompleteModule,
@@ -79,4 +82,5 @@ import { MdToolbarModule,
     MdSnackBarModule,
   ]
 })
-export class MaterialModule { }
+
+export class DesignModule { }

@@ -1,9 +1,8 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { MaterialModule } from './../modules/material.module';
 
+import { DesignModule } from './../modules/design.module';
 import { ShoppingListRoutingModule } from './shopping-list-routing.module';
 import { ShoppingEditComponent } from './shopping-edit/shopping-edit.component';
 import { ShoppingListComponent } from './shopping-list.component';
@@ -14,8 +13,7 @@ import { ShoppingListComponent } from './shopping-list.component';
     ShoppingEditComponent,
   ],
   imports: [
-    MaterialModule,
-    FlexLayoutModule,
+    DesignModule,
     ShoppingListRoutingModule,
     ReactiveFormsModule,
     CommonModule

@@ -1,9 +1,8 @@
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './../modules/material.module';
 
+import { DesignModule } from './../modules/design.module';
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { RecipesHomeComponent } from './recipes-home/recipes-home.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
@@ -24,8 +23,7 @@ import { RecipesComponent } from './recipes.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MaterialModule,
-    FlexLayoutModule,
+    DesignModule,
     RecipesRoutingModule
   ]
 })
